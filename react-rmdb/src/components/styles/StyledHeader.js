@@ -8,13 +8,13 @@ export const StyledHeader = styled.div`
   .header-content {
     max-width: 1280px;
     min-height: 120px;
-    padding: 20px 0px;
+    padding: 20px 0;
     margin: 0 auto;
     box-sizing: border-box;
 
     @media screen and (max-width: 500px) {
       max-width: 1280px;
-      min-height: 0px;
+      min-height: 0;
     }
   }
 `;
@@ -37,6 +37,6 @@ export const StyledTMDBLogo = styled.img`
   @media screen and (max-width: 500px) {
     display: inline-block;
     width: 80px;
-    margin-top: 0px;
+    margin-top: 0;
   }
 `;
