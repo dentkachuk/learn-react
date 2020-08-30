@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE } from '../config';
+import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE, API_URL, API_KEY } from '../config';
 
 // import Components 
 import HeroImage from './elements/HeroImage';
@@ -27,6 +27,15 @@ const Home = () => {
 	if (error) return <div>Something went wrong ...</div>
 	if(!movies[0]) return <Spinner />
 
+	const loadMoreMovies = () => {
+		const searchEndpoint = `${API_URL}search/movie?api_key=${API_KEY}&query=${searchTerm}&page=${currentPage + 1}`;
+		const popularEndpoint = `${API_URL}movie/popular?api_key=${API_KEY}&page=${currentPage + 1}`;
+
+		const endpoint = searchTerm ? searchEndpoint : popularEndpoint;
+
+		fetchMovies(endpoint);
+	}
+
 	return (<>
 		<HeroImage
 			image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${heroImage.backdrop_path}`}
@@ -46,9 +55,10 @@ const Home = () => {
 				))
 			}
 		</Grid>
-		<MovieThumb />
-		<LoadMoreBtn />
-		<Spinner />
+		{loading && <Spinner />}
+		{currentPage < totalPages && !loading && (
+			<LoadMoreBtn text="Load more" callback={loadMoreMovies} />
+		)}
 	</>)
 }
 
