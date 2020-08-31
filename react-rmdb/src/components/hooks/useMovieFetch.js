@@ -15,7 +15,6 @@ export const useMovieFetch = movieId => {
 			const result = await (await fetch(endpoint)).json();
 			const creditsEndpoint = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
 			const creditsResult = await (await fetch(creditsEndpoint)).json();
-			console.log(creditsResult);
 			const directors = creditsResult.crew.filter(
 				member => member.job === 'Director'
 			);
