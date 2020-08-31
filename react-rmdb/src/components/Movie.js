@@ -23,8 +23,8 @@ const Movie = ({ movieId }) => {
 			<Navigation title={movieData.original_title}/>
 			<MovieInfo movieData={movieData}/>
 			<MovieInfoBar time={movieData.runtime}
-						  revenue={movieData.revenue}
-						  budget={movieData.budget}/>
+						  budget={movieData.budget}
+						  revenue={movieData.revenue}/>
 			<Grid header="Actors">
 				{movieData.actors.map(actor => (
 					<Actor key={actor.credit_id} actor={actor} />
