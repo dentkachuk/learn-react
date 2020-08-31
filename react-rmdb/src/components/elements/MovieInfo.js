@@ -16,6 +16,24 @@ const MovieInfo = ({movieData}) => (
 					clickable={false}
 				/>
 			</div>
+			<div className="movieinfo-text">
+				<h1>{movieData.title}</h1>
+				<h3>PLOT</h3>
+				<p>{movieData.overview}</p>
+
+				<div className="rating-director">
+					<div>
+						<h3>IMDB RATING</h3>
+						<div className="score">{movieData.vote_average}</div>
+					</div>
+					<div className="director">
+						<h3>DIRECTOR{movieData.directors.lenght > 1 ? 'S' : ''}</h3>
+						{movieData.directors.map(element => (
+							<p key={element.credit_id}>{element.name}</p>
+						))}
+					</div>
+				</div>
+			</div>
 		</div>
 	</StyledMovieInfo>
 )
