@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IMAGE_BASE_URL, BACKDROP_SIZE, SEARCH_BASE_URL, POPULAR_BASE_URL, POSTER_SIZE } from '../config';
+import { IMAGE_BASE_URL, BACKDROP_SIZE, SEARCH_BASE_URL, POPULAR_BASE_URL } from '../config';
 
 // import Components 
 import HeroImage from './elements/HeroImage';

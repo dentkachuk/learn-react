@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // Componnets
 import Navigation from './elements/Navigation';
@@ -32,6 +33,10 @@ const Movie = ({ movieId }) => {
 			</Grid>
 		</>
 	)
+}
+
+Movie.propTypes = {
+	movieId: PropTypes.string
 }
 
 export default Movie;
