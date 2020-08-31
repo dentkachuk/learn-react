@@ -25,7 +25,7 @@ export const useHomeFetch = () => {
 				totalPages: result.total_pages
 			}));
 		} catch (error) {
-			setError(error);
+			setError(true);
 		}
 
 		setLoading(false);

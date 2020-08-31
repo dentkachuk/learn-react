@@ -41,7 +41,7 @@ const Home = () => {
 	}
 
 	if (error) return <div>Something went wrong ...</div>
-	if(!movies[0]) return <Spinner />
+	if (!movies[0]) return <Spinner />
 
 	return (<>
 		{!searchTerm && (
